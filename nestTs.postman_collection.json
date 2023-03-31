@@ -1,0 +1,200 @@
+{
+  "info": {
+    "_postman_id": "cf73bc04-b456-4e02-85a6-7f32069eeb98",
+    "name": "nestTs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24071348"
+  },
+  "item": [
+    {
+      "name": "verCarritoPorId",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\"product\": \"Don Pedro\",\r\n      \"typeOfLiquor\": \"Brandy\",\r\n      \"price\": 355,\r\n      \"image\": \"https://cdn.shopify.com/s/files/1/0402/2475/1766/products/BRANDYDONPEDRO1000MLSHOPIFY_700x.jpg?v=1637864473\",\r\n      \"description\": \"Brandy Don Pedro Reserva Especial 750 ml a un súper precio\",\r\n      \"stockItems\": 9,\r\n      \"codeItem\": 121}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/carritos/carrito/6425d4d18b1420530e2f1618",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["carritos", "carrito", "6425d4d18b1420530e2f1618"]
+        },
+        "description": "agregar un item al carrito"
+      },
+      "response": []
+    },
+    {
+      "name": "agregarItemAcarritoPoridCarritoybodyProduct",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\"product\": \"Don Pedro\",\r\n      \"typeOfLiquor\": \"Brandy\",\r\n      \"price\": 355,\r\n      \"image\": \"https://cdn.shopify.com/s/files/1/0402/2475/1766/products/BRANDYDONPEDRO1000MLSHOPIFY_700x.jpg?v=1637864473\",\r\n      \"description\": \"Brandy Don Pedro Reserva Especial 750 ml a un súper precio\",\r\n      \"stockItems\": 9,\r\n      \"codeItem\": 121}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/carritos/carrito/6425d4d18b1420530e2f1618/add",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["carritos", "carrito", "6425d4d18b1420530e2f1618", "add"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "eliminarItemCarritoPoridyporQueryParamselcodeItem",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/carritos/delete/6425d4d18b1420530e2f1618?itemEl=123",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["carritos", "delete", "6425d4d18b1420530e2f1618"],
+          "query": [
+            {
+              "key": "itemEl",
+              "value": "123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "crearUnCarrito",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n     \"idUser\": \"Enrique Hernandez\",\r\n\"emailUser\": \"enriqueHm@hotmail.com\",\r\n  \"carrito\": []\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/carritos/crearCarrito",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["carritos", "crearCarrito"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ver todos los productos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "un item por id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/products/64209a8d1cefbbfba3916bf7",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["products", "64209a8d1cefbbfba3916bf7"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "post un producto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"product\": \"Presidente\",\r\n            \"typeOfLiquor\": \"Brandy\",\r\n            \"price\": 455,\r\n            \"image\": \"https://cdn.shopify.com/s/files/1/0402/2475/1766/products/BRANDYDONPEDRO1000MLSHOPIFY_700x.jpg?v=1637864473\",\r\n            \"description\": \"Brandy Don Pedro Reserva Especial 750 ml a un súper precio\",\r\n            \"stockItems\": 9,\r\n            \"codeItem\": 150\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "modificar un producto",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"product\": \"Presidente\",\r\n            \"typeOfLiquor\": \"Brandy\",\r\n            \"price\": 455,\r\n            \"image\": \"https://cdn.shopify.com/s/files/1/0402/2475/1766/products/BRANDYDONPEDRO1000MLSHOPIFY_700x.jpg?v=1637864473\",\r\n            \"description\": \"Prueba put\",\r\n            \"stockItems\": 9,\r\n            \"codeItem\": 150\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/products/64209a8d1cefbbfba3916bf7",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["products", "64209a8d1cefbbfba3916bf7"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete un item",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/products/64267fe31ab99fb4ce424f58",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["products", "64267fe31ab99fb4ce424f58"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

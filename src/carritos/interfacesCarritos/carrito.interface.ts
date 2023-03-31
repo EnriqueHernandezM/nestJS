@@ -5,13 +5,13 @@ export interface Carrtr extends Document {
   readonly emailUser: string;
   readonly carrito: [
     {
-      product: 'Don Pedro';
-      typeOfLiquor: 'Brandy';
-      price: 355;
-      image: 'https://cdn.shopify.com/s/files/1/0402/2475/1766/products/BRANDYDONPEDRO1000MLSHOPIFY_700x.jpg?v=1637864473';
-      description: 'Brandy Don Pedro Reserva Especial 750 ml a un súper precio';
-      stockItems: number;
-      codeItem: number;
+      readonly product: string;
+      readonly typeOfLiquor: string;
+      readonly price: number;
+      readonly image: string;
+      readonly description: string;
+      readonly stockItems: number;
+      readonly codeItem: number;
     },
   ];
   //readonly data: Date;

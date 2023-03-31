@@ -44,13 +44,13 @@ export class CarritosService {
   ): Promise<Carrtr> {
     const catchCar = await this.allCartrsForId(carId);
     const carrito = catchCar.carrito;
-    const trolleyDelete = carrito.find((el) => el.codeItem == itemToDelete);
-    const actCar = carrito.splice(trolleyDelete, 1);
+    const trolleyDelete = carrito.filter((el) => el.codeItem != itemToDelete);
+    //const actCar = carrito.splice(trolleyDelete, 1);
     await this.carrtrModel.updateOne(
       { _id: carId },
       {
         $set: {
-          carrito: actCar,
+          carrito: trolleyDelete,
         },
       },
     );
